@@ -27,12 +27,12 @@ Usaremos o `husky` para garantir que o linter seja executado antes de cada commi
 
     Por padrão, o arquivo `.husky/pre-commit` vem com o comando `npm test`. Precisamos alterá-lo para rodar nosso script de lint.
 
+    > **Nota Importante:** Ao criar ou editar os arquivos de hook do Husky (como `pre-commit` ou `commit-msg`), **não adicione** as linhas `#!/usr/bin/env sh` e `. "$(dirname -- "$0")/_/husky.sh"`. Elas estão obsoletas e serão removidas em futuras versões do Husky. Adicione apenas os comandos que você deseja executar.
+
     Abra o arquivo `.husky/pre-commit` e substitua o conteúdo por:
 
     ```bash
     pnpm run lint
     ```
-
-    **Nota:** Versões futuras do Husky (a partir da v10) removerão a necessidade do script de inicialização (`. "$(dirname...` ). Para manter o projeto atualizado, o hook deve conter apenas os comandos a serem executados.
 
 Com isso, o `husky` está configurado. A cada tentativa de `git commit`, o comando `pnpm run lint` será executado primeiro. Se o lint falhar, o commit será abortado.

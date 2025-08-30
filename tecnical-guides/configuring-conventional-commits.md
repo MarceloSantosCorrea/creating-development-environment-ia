@@ -54,6 +54,8 @@ Para que a validação ocorra automaticamente, precisamos adicionar um novo hook
 
 Para mais detalhes sobre a configuração do Husky, consulte o guia [Configurando o Husky para Git Hooks](./configuring-husky.md).
 
+> **Nota Importante:** Ao criar ou editar os arquivos de hook do Husky (como `pre-commit` ou `commit-msg`), **não adicione** as linhas `#!/usr/bin/env sh` e `. "$(dirname -- "$0")/_/husky.sh"`. Elas estão obsoletas e serão removidas em futuras versões do Husky. Adicione apenas os comandos que você deseja executar.
+
 Crie um novo arquivo de hook com o seguinte comando, que já adiciona o script necessário:
 
 ```bash
