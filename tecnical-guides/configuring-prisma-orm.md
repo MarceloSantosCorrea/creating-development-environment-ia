@@ -40,7 +40,6 @@ Abra o arquivo `prisma/schema.prisma` e configure-o. Ele deve se parecer com o s
 // Define o gerador do Prisma Client, que será em TypeScript
 generator client {
   provider = "prisma-client-js"
-  output   = "./client"
 }
 
 // Define a fonte de dados (nosso banco de dados)
@@ -49,6 +48,8 @@ datasource db {
   url      = env("DATABASE_URL") // Carrega a URL de conexão do arquivo .env
 }
 ```
+
+**Importante:** Se o arquivo gerado automaticamente contiver a linha `output = "../src/generated/prisma"` no bloco `generator client`, remova essa linha para usar o diretório padrão do Prisma.
 
 **Importante:** Certifique-se de que a variável `DATABASE_URL` no seu arquivo `.env` está correta e aponta para o contêiner do PostgreSQL. O valor deve ser o mesmo definido no guia do Docker Compose:
 
@@ -64,10 +65,4 @@ Após configurar o schema, você precisa gerar o Prisma Client para poder usá-l
 pnpm exec prisma generate
 ```
 
-Este comando lê o `schema.prisma` e gera o código do client no diretório de saída especificado (`./prisma/client`).
-
-O client fornece uma API fluente e totalmente tipada para interagir com as tabelas do seu banco de dados.
-
-Como especificamos um diretório de saída customizado, o caminho de importação do `PrismaClient` mudou. Em vez de importar de `@prisma/client`, você deve usar o caminho relativo para o diretório `prisma/client`.
-
-Com estes passos, o Prisma está configurado para se conectar ao banco e gerar o client.
+Este comando lê o `schema.prisma` e gera o código do client no diretório padrão.
