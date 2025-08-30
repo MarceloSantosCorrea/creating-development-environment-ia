@@ -11,3 +11,4 @@ Este diretório contém os registros de todas as decisões de arquitetura signif
 *   [0005: Adoção do Prisma como ORM](./0005-use-prisma-orm.md)
 *   [0006: Adoção do Docker para Containerização](./0006-use-docker-for-containerization.md)
 *   [0007: Adoção do Zod para Validação de Dados](./0007-use-zod-for-validation.md)
+*   [0008: Adoção de shadcn/ui para Componentes de UI](./0008-use-shadcn-ui.md)

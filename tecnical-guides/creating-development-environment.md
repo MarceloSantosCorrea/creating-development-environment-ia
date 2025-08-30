@@ -24,19 +24,25 @@ Padronizamos as mensagens de commit para melhorar a legibilidade do histórico e
 
 ➡️ **Guia Detalhado: [Configurando Conventional Commits com Commitlint](./configuring-conventional-commits.md)**
 
-### 4. Configurar o Docker Compose
+### 4. Instalar e Configurar o shadcn/ui
+
+Com a base do projeto pronta, configuramos o `shadcn/ui` para gerenciar nossos componentes de UI.
+
+➡️ **Guia Detalhado: [Configurando o shadcn/ui](./configuring-shadcn-ui.md)**
+
+### 5. Configurar o Docker Compose
 
 Para um ambiente de desenvolvimento consistente e isolado, utilizamos o Docker Compose para gerenciar os serviços de infraestrutura, como o banco de dados.
 
 ➡️ **Guia Detalhado: [Configuração do Docker Compose](./configuring-docker-compose.md)**
 
-### 5. Instalar e Configurar o Prisma ORM
+### 6. Instalar e Configurar o Prisma ORM
 
 A interação com o banco de dados é feita de forma segura e tipada através do Prisma ORM.
 
 ➡️ **Guia Detalhado: [Configurando o Prisma ORM](./configuring-prisma-orm.md)**
 
-### 6. Criar o Repositório Git e Fazer o Primeiro Commit
+### 7. Criar o Repositório Git e Fazer o Primeiro Commit
 
 Após concluir todas as configurações anteriores, é hora de inicializar o repositório Git e salvar o progresso.
 

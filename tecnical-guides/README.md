@@ -17,4 +17,5 @@ Estes são os guias detalhados para cada ferramenta ou processo específico.
 *   [Configurando Conventional Commits com Commitlint](./configuring-conventional-commits.md)
 *   [Configuração do Docker Compose](./configuring-docker-compose.md)
 *   [Configurando o Prisma ORM](./configuring-prisma-orm.md)
+*   [Configurando o shadcn/ui](./configuring-shadcn-ui.md)
 
