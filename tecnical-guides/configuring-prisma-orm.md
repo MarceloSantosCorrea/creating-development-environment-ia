@@ -48,14 +48,6 @@ datasource db {
   provider = "postgresql" // Usaremos PostgreSQL
   url      = env("DATABASE_URL") // Carrega a URL de conexão do arquivo .env
 }
-
-// Exemplo de um modelo de dados.
-// Adicione seus modelos aqui.
-model User {
-  id    String @id @default(uuid())
-  email String @unique
-  name  String?
-}
 ```
 
 **Importante:** Certifique-se de que a variável `DATABASE_URL` no seu arquivo `.env` está correta e aponta para o contêiner do PostgreSQL. O valor deve ser o mesmo definido no guia do Docker Compose:
@@ -77,29 +69,5 @@ Este comando lê o `schema.prisma` e gera o código do client no diretório de s
 O client fornece uma API fluente e totalmente tipada para interagir com as tabelas do seu banco de dados.
 
 Como especificamos um diretório de saída customizado, o caminho de importação do `PrismaClient` mudou. Em vez de importar de `@prisma/client`, você deve usar o caminho relativo para o diretório `prisma/client`.
-
-Veja um exemplo de como usá-lo em um arquivo TypeScript na raiz do projeto:
-
-```typescript
-import { PrismaClient } from './prisma/client';
-
-const prisma = new PrismaClient();
-
-async function main() {
-  // Exemplo: Listar todos os usuários.
-  // Nota: A tabela 'User' correspondente ao modelo no schema.prisma
-  // deve existir no banco de dados para que esta consulta funcione.
-  const allUsers = await prisma.user.findMany();
-  console.log('Todos os usuários:', allUsers);
-}
-
-main()
-  .catch((e) => {
-    throw e;
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
-  });
-```
 
 Com estes passos, o Prisma está configurado para se conectar ao banco e gerar o client.
